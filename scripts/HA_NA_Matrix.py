@@ -102,7 +102,7 @@ annot_data = heatmap_data.astype(str).mask(heatmap_data == 0, "")
 inner_max = heatmap_data.iloc[:-1, :-1].to_numpy().max()
 vmax = max(1, inner_max)
 
-fig, ax = plt.subplots(figsize=(10, 10))
+fig, ax = plt.subplots(figsize=(30, 10))
 ax.set_facecolor("#D9D9D9")
 
 sns.heatmap(
@@ -116,12 +116,13 @@ sns.heatmap(
     linecolor="white",
     vmin=1, vmax=vmax,
     cbar_kws={"label": "Number of detections"},
+    annot_kws={"size": 14, "weight": "bold"},
     ax=ax,
 )
 
 ax.set_title(
-    "HA × NA subtype matrix in South American avian influenza viruses",
-    fontsize=13, fontweight="bold", pad=12,
+    "HA × NA subtype matrix",
+    fontsize=15, fontweight="bold", pad=12,
 )
 ax.set_xlabel("NA subtype")
 ax.set_ylabel("HA subtype")
@@ -132,5 +133,5 @@ plt.tight_layout()
 plt.savefig(OUTPUT_DIR / "HA_NA_Matrix.svg", format="svg", bbox_inches="tight")
 plt.savefig(OUTPUT_DIR / "HA_NA_Matrix.png", dpi=600, bbox_inches="tight")
 plt.close()
-
+plt.show()
 print("\nSaved: HA_NA_Matrix.svg / .png")

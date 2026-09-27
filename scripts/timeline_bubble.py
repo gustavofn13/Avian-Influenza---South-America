@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 """
-Temporal distribution of AIV subtypes in South America (2000-2024)
+Temporal distribution of AIV subtype records in South America (2000-2024)
 South American AIV Dataset - reads from AP3 (Unified sheet)
+
+Two-panel temporal figure (replaces the previous bubble timeline):
+  (A) Inter-annual: subtype records per YEAR, stacked by country.
+  (B) Intra-annual: subtype records per MONTH of collection, stacked by
+      country, over austral-season context bands (summer/autumn/winter/spring),
+      with per-season totals.
 
 Standard header shared with the country/host heatmap scripts:
   - loads AP3 from a single INPUT_FILE
@@ -12,10 +17,11 @@ Standard header shared with the country/host heatmap scripts:
   - saves SVG with editable text (svg.fonttype = 'none')
 """
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib as mpl
 from pathlib import Path
+import numpy as np
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 # ==========================================================
 # STANDARD LOAD BLOCK (shared across all figure scripts)
@@ -27,109 +33,193 @@ OUTPUT_DIR = PROJECT_ROOT / "output"
 SHEET = "Unified"
 TARGET_COUNTRIES = ["Chile", "Argentina", "Brazil", "Peru", "Colombia", "Bolivia"]
 
-OUTPUT_DIR.mkdir(exist_ok=True)
 df = pd.read_excel(INPUT_FILE, sheet_name=SHEET)
 
 df["Country"] = (
-    df["Location"]
-    .astype(str)
-    .str.strip()
-    .str.split("/").str[0]
-    .str.strip()
+    df["Location"].astype(str).str.strip().str.split("/").str[0].str.strip()
 )
 df = df[df["Country"].isin(TARGET_COUNTRIES)].copy()
 
-df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
-df = df.dropna(subset=["Year"])
-df["Year"] = df["Year"].astype(int)
+df["Year"]  = pd.to_numeric(df["Year"], errors="coerce")
+df["Month"] = pd.to_numeric(df["Month"], errors="coerce")
 
 # ==========================================================
 # EDITABLE-TEXT SVG SETTINGS
-# Keeps text as text in the SVG (not converted to paths),
-# so it can be edited in Affinity/Inkscape/Illustrator.
 # ==========================================================
 
 mpl.rcParams["svg.fonttype"] = "none"
-mpl.rcParams["pdf.fonttype"] = 42        # TrueType, editable in PDF too
+mpl.rcParams["pdf.fonttype"] = 42
 mpl.rcParams["font.family"] = "sans-serif"
+
+# ==========================================================
+# STYLE  (pastel palette)
+#   Chile      -> pale blue
+#   Argentina  -> stronger blue
+#   Brazil     -> pastel green
+#   Peru       -> pastel red
+#   Colombia   -> pastel yellow
+#   Bolivia    -> pastel taupe
+# ==========================================================
+
+COUNTRY_COLORS = {
+    "Chile":     "#B3D3E8",
+    "Argentina": "#5B79B0",
+    "Brazil":    "#9BCDB2",
+    "Peru":      "#E39A9A",
+    "Colombia":  "#ECD489",
+    "Bolivia":   "#C7B39B",
+}
+
+YEARS  = list(range(2000, 2025))
+MONTHS = list(range(1, 13))
+MONTH_LABELS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+# Austral seasons (Southern Hemisphere): month groups + soft pastel tint
+SEASON_MONTHS = {
+    "Summer": [12, 1, 2],
+    "Autumn": [3, 4, 5],
+    "Winter": [6, 7, 8],
+    "Spring": [9, 10, 11],
+}
+SEASON_TINT = {
+    "Summer": "#FBE7DA",
+    "Autumn": "#FBF0D6",
+    "Winter": "#DEEBF3",
+    "Spring": "#E4F0DE",
+}
+# contiguous shaded spans on the Jan..Dec axis (label, x0, x1, season)
+SEASON_BANDS = [
+    ("Summer", 0.5,  2.5),   # Jan-Feb
+    ("Autumn", 2.5,  5.5),   # Mar-May
+    ("Winter", 5.5,  8.5),   # Jun-Aug
+    ("Spring", 8.5,  11.5),  # Sep-Nov
+    ("Summer", 11.5, 12.5),  # Dec (summer tail)
+]
 
 # ==========================================================
 # AGGREGATE
 # ==========================================================
 
-df_agg = (
-    df.groupby(["Country", "Year"])
-      .size()
-      .reset_index(name="Quantidade")
-)
+yr = df.dropna(subset=["Year"]).copy();  yr["Year"]  = yr["Year"].astype(int)
+mo = df.dropna(subset=["Month"]).copy(); mo["Month"] = mo["Month"].astype(int)
 
-print("Totals per country (must match AP3):")
-print(df_agg.groupby("Country")["Quantidade"].sum().reindex(TARGET_COUNTRIES))
-print()
+A = (pd.crosstab(yr["Year"], yr["Country"])
+       .reindex(index=YEARS, columns=TARGET_COUNTRIES, fill_value=0))
+B = (pd.crosstab(mo["Month"], mo["Country"])
+       .reindex(index=MONTHS, columns=TARGET_COUNTRIES, fill_value=0))
 
-df_agg["Country"] = pd.Categorical(
-    df_agg["Country"], categories=TARGET_COUNTRIES, ordered=True
-)
+month_tot = B.sum(axis=1)
+season_tot = {s: int(month_tot.reindex(m).sum()) for s, m in SEASON_MONTHS.items()}
+
+print("Records per year (per country) — must match AP3:")
+print(A.sum(axis=1).to_string())
+print(f"\nTotal records with year:  {int(A.values.sum())} / {len(df)}")
+print(f"Total records with month: {int(B.values.sum())} / {len(df)} "
+      f"({B.values.sum()/len(df)*100:.0f}%)")
+print("\nRecords per austral season:")
+for s in ["Summer", "Autumn", "Winter", "Spring"]:
+    print(f"  {s}: {season_tot[s]}")
 
 # ==========================================================
 # PLOT
 # ==========================================================
 
-country_colors = {
-    "Chile":     "#E32219",
-    "Argentina": "#FF9326",
-    "Brazil":    "#3F9492",
-    "Peru":      "#C9227A",
-    "Colombia":  "#4A148C",
-    "Bolivia":   "#5D4037",
-}
-
-fig, ax = plt.subplots(figsize=(14, 7), facecolor="white")
-ax.set_facecolor("white")
-
-for i, _ in enumerate(TARGET_COUNTRIES):
-    ax.axhline(y=i, color="#E0E0E0", linestyle="-", linewidth=1, zorder=1)
-
-ax.scatter(
-    df_agg["Year"],
-    df_agg["Country"].cat.codes,
-    s=df_agg["Quantidade"] * 40,
-    c=df_agg["Country"].map(country_colors),
-    alpha=0.9,
-    zorder=2,
+fig, (axA, axB) = plt.subplots(
+    2, 1, figsize=(17, 11.5),
+    gridspec_kw={"height_ratios": [1.4, 1.0], "hspace": 0.30},
+    facecolor="white",
 )
 
-for _, row in df_agg.iterrows():
-    y_pos = TARGET_COUNTRIES.index(row["Country"])
-    ax.text(
-        x=row["Year"], y=y_pos - 0.22,
-        s=str(row["Quantidade"]),
-        ha="center", va="center",
-        fontsize=8.5, color="#333333",
-    )
+# ---------- Panel A: per year, stacked by country ----------
+bottom = np.zeros(len(YEARS))
+for c in TARGET_COUNTRIES:
+    axA.bar(YEARS, A[c].values, bottom=bottom, width=0.78,
+            color=COUNTRY_COLORS[c], edgecolor="white", linewidth=0.4, label=c)
+    bottom += A[c].values
 
-ax.set_title(
-    "Temporal distribution of AIV subtypes in South America (2000-2024)",
-    fontsize=14, fontweight="bold", loc="left", pad=15, color="#111111",
-)
-ax.set_xlabel("Year", fontsize=11, fontweight="bold", labelpad=10)
-ax.set_xlim(2000.5, 2024.5)
-ax.set_xticks(range(2000, 2025))
-ax.tick_params(axis="x", labelsize=9.5, colors="#333333")
+totalsA = A.sum(axis=1).values
+for x, t in zip(YEARS, totalsA):
+    if t > 0:
+        axA.text(x, t + 0.8, str(int(t)), ha="center", va="bottom",
+                 fontsize=12, color="#333333")
 
-ax.set_yticks(range(len(TARGET_COUNTRIES)))
-ax.set_yticklabels(TARGET_COUNTRIES, fontsize=11, fontweight="bold", color="#222222")
-ax.invert_yaxis()
+gap_top = totalsA.max() * 0.45
+axA.annotate("no records\n2020–2021", xy=(2020.5, 1.5), xytext=(2020.5, gap_top),
+             ha="center", va="center", fontsize=12, color="#8A8A8A",
+             arrowprops=dict(arrowstyle="-", color="#CCCCCC", lw=1.2))
 
-for spine in ["top", "left", "right"]:
-    ax.spines[spine].set_visible(False)
-ax.spines["bottom"].set_color("#CCCCCC")
-ax.spines["bottom"].set_linewidth(1)
-ax.yaxis.set_ticks_position("none")
+axA.set_title("A. Subtype records per year", fontsize=17, fontweight="bold",
+              loc="left", pad=12, color="#111111")
+axA.set_ylabel("Records", fontsize=16, fontweight="bold")
+axA.set_xlim(1999.4, 2024.6)
+axA.set_xticks(YEARS)
+axA.set_xticklabels([str(y) for y in YEARS], rotation=90, fontsize=12, color="#333333")
+axA.set_ylim(0, totalsA.max() * 1.15)
+axA.tick_params(axis="y", labelsize=13)
+for s in ["top", "right"]:
+    axA.spines[s].set_visible(False)
+axA.spines["left"].set_color("#CCCCCC")
+axA.spines["bottom"].set_color("#CCCCCC")
+axA.legend(title="Country", ncol=3, frameon=False, fontsize=13,
+           title_fontsize=14, loc="upper left", bbox_to_anchor=(0.005, 0.99),
+           columnspacing=1.4, handletextpad=0.6)
+
+# ---------- Panel B: per month, stacked by country, season bands + totals ----------
+band_top = month_tot.max() * 1.32
+for name, x0, x1 in SEASON_BANDS:
+    axB.axvspan(x0, x1, color=SEASON_TINT[name], alpha=1.0, zorder=0)
+    if x1 - x0 > 1:   # label only the main (multi-month) bands
+        axB.text((x0 + x1) / 2, band_top * 0.985,
+                 f"{name}\nn = {season_tot[name]}",
+                 ha="center", va="top", fontsize=13, color="#6E6E6E",
+                 style="italic", zorder=1, linespacing=1.25)
+
+bottom = np.zeros(len(MONTHS))
+for c in TARGET_COUNTRIES:
+    axB.bar(MONTHS, B[c].values, bottom=bottom, width=0.72,
+            color=COUNTRY_COLORS[c], edgecolor="white", linewidth=0.4,
+            zorder=3, label=c)
+    bottom += B[c].values
+
+totalsB = month_tot.values
+for x, t in zip(MONTHS, totalsB):
+    if t > 0:
+        axB.text(x, t + 0.6, str(int(t)), ha="center", va="bottom",
+                 fontsize=12, color="#333333", zorder=4)
+
+axB.set_title("B. Subtype records per month of collection  "
+              f"(n = {int(totalsB.sum())} with month; austral seasons shaded)",
+              fontsize=17, fontweight="bold", loc="left", pad=12, color="#111111")
+axB.set_ylabel("Records", fontsize=16, fontweight="bold")
+axB.set_xlabel("Month of collection", fontsize=17, fontweight="bold", labelpad=10)
+axB.set_xlim(0.5, 12.5)
+axB.set_xticks(MONTHS)
+axB.set_xticklabels(MONTH_LABELS, fontsize=13, color="#333333")
+axB.set_ylim(0, band_top)
+axB.tick_params(axis="y", labelsize=13)
+for s in ["top", "right"]:
+    axB.spines[s].set_visible(False)
+axB.spines["left"].set_color("#CCCCCC")
+axB.spines["bottom"].set_color("#CCCCCC")
+
+fig.suptitle("Temporal distribution of AIV subtype records in South America (2000–2024)",
+             fontsize=20, fontweight="bold", x=0.012, ha="left", y=0.995)
 
 plt.tight_layout()
-plt.savefig(OUTPUT_DIR / "timeline_bubble.svg", format="svg", bbox_inches="tight")
-plt.savefig(OUTPUT_DIR / "timeline_bubble.png", dpi=600, bbox_inches="tight")
+
+plt.savefig(
+    OUTPUT_DIR / "timeline_bubble.svg",
+    format="svg",
+    bbox_inches="tight"
+)
+
+plt.savefig(
+    OUTPUT_DIR / "timeline_bubble.png",
+    dpi=600,
+    bbox_inches="tight"
+)
+
 plt.close()
 
-print("Saved: timeline_bubble.svg / .png")
+print("\nSaved: timeline_bubble.svg / .png")

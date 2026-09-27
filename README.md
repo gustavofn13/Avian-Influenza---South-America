@@ -26,7 +26,6 @@ aiv_south_america/
 └── README.md                              # this file
 ```
 
-The `map_R/` folder is separate — it holds the R pipeline for the sampling effort map, with its own AP6 dataset and README.
 
 ---
 
