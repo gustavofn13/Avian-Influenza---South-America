@@ -28,8 +28,7 @@ aiv_south_america/
 │       ├── <GENE>_BSSVS_NORTH_HOST.xml    # BSSVS, North clade, host predictor
 │       ├── <GENE>_BSSVS_NORTH_LOCAL.xml   # BSSVS, North clade, location predictor
 │       ├── <GENE>_BSSVS_SOUTH_HOST.xml    # BSSVS, South clade, host predictor
-│       └── <GENE>_BSSVS_SOUTH_LOCAL.xml   # BSSVS, South clade, location predictor
-├── rename.py                              # standardizes the xmls/ file names (see script docstring)
+│       └── <GENE>_BSSVS_SOUTH_LOCAL.xml   # BSSVS, South clade, location (see script docstring)
 ├── Phylogroup_github/                     # phylogroup classification pipeline
 │   ├── phylogroup_counts/                 # per-gene N/S clade assignment lists + table builder
 │   │   └── build_phylogroup_tables.py
@@ -83,18 +82,20 @@ bash run_all.sh
 **Or one step at a time:**
 
 ```bash
-python scripts/timeline_bubble.py
-python scripts/HA_Country_Heatmap.py
-python scripts/HA_Host_Heatmap.py
-python scripts/HA_NA_Matrix.py
+python3 scripts/timeline_bubble.py
+python3 scripts/HA_Country_Heatmap.py
+python3 scripts/HA_Host_Heatmap.py
+python3 scripts/HA_NA_Matrix.py
 
 # phylogroup pipeline
 cd Phylogroup_github/phylogroup_counts
-python build_phylogroup_tables.py --ap3 ../../data/AP3_subtype_counts_oficial.xlsx --out .
+python3 build_phylogroup_tables.py --ap3 ../../data/AP3_subtype_counts_oficial.xlsx --out .
 cp Table_B_new.csv ../phylogroup_tanglegram/Table_B_new.csv
 cd ../phylogroup_tanglegram
-python make_tanglegram_figure.py
+python3 make_tanglegram_figure.py
 ```
+
+(On some systems the interpreter is called `python` instead of `python3` — use whichever one exists in your environment. `run_all.sh` auto-detects this.)
 
 Each script prints a totals table to the terminal for verification (it should match the tables above) and saves the figure as SVG and PNG in the current directory.
 
