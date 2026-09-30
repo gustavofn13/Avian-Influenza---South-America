@@ -2,7 +2,7 @@
 
 Reproducibility package for the figures of the systematic-review manuscript:
 
-**"Eco-Epidemiological and Evolutionary Landscape of Avian Influenza Viruses in South America: A Continental Synthesis (2000–2024)"**
+**"Eco-Epidemiological and Evolutionary Landscape of Avian Influenza Viruses in South America (2000–2024)"**
 
 This repository contains the curated dataset (Appendix 3), the scripts that generate the figures directly from it, the BEAST XML files used for the molecular clock / BSSVS analyses, and the phylogroup classification pipeline. Running `run_all.sh` on the provided AP3 file reproduces the published figures and tables.
 
@@ -52,20 +52,6 @@ Standard processing across scripts:
 - Records are filtered to the six target countries: Chile, Argentina, Brazil, Peru, Colombia, Bolivia
 - `Subtype` is parsed with regex `H\d{1,2}` for HA and `N\d{1,2}` for NA
 - SVG output uses editable text (`svg.fonttype = "none"`) — text remains as `<text>` elements, not paths, so it can be edited in Affinity Designer, Inkscape or Illustrator
-
-### Expected totals from AP3
-
-| Country   | Records (HA) | Records (HA+NA) |
-|-----------|--------------|-----------------|
-| Chile     | 208          | 207             |
-| Argentina | 64           | 64              |
-| Brazil    | 28           | 18              |
-| Peru      | 25           | 25              |
-| Colombia  | 7            | 7               |
-| Bolivia   | 1            | 1               |
-| **Total** | **333**      | **322**         |
-
-The HA × NA matrix uses only records where both subtypes are characterized (n=322). Records with only HA (e.g., "H3" without NA typing — 11 records, all from Brazil) are excluded from this figure because they cannot be placed on a HA × NA cell.
 
 ---
 
@@ -163,11 +149,7 @@ bash run_all.sh
 
 The `Unified` sheet of AP3 consolidates two independent sources:
 - **Sequences** (aba `Sequences`): 308 records retrieved from GISAID EpiFlu (accession IDs preserved)
-- **Manuscript** (aba `Manuscript`): 123 records extracted from the 73 studies included in the systematic review (PRISMA-registered, OSF: [protocol DOI])
-
-After deduplication and consolidation, the `Unified` sheet contains 335 rows. Of these:
-- **333** enter the country/host/timeline figures (1 record from Ecuador and 1 residual header row are excluded)
-- **322** enter the HA × NA matrix (only records with both HA and NA characterized)
+- **Manuscript** (aba `Manuscript`): 123 records extracted from the 47 studies included in the systematic review
 
 ---
 
@@ -175,10 +157,10 @@ After deduplication and consolidation, the `Unified` sheet contains 335 rows. Of
 
 If you reuse this data or code, please cite:
 
-Fenner GO, [coauthors], de Araujo J. *Eco-Epidemiological and Evolutionary Landscape of Avian Influenza Viruses in South America: A Continental Synthesis (2000–2024)*. [Journal, year]. DOI: [to be added upon acceptance]
+Fenner GO, [coauthors], de Araujo J. *Eco-Epidemiological and Evolutionary Landscape of Avian Influenza Viruses in South America [Journal, year]. DOI: [to be added upon acceptance]
 
 ---
 
 ## Contact
 
-Gustavo de Oliveira Fenner — Laboratório de Pesquisas em Vírus Emergentes (LPVE), Instituto de Ciências Biomédicas, Universidade de São Paulo. gustavo.fenner@usp.br
+Gustavo de Oliveira Fenner — Laboratório de Pesquisas em Vírus Emergentes (LPVE), Instituto de Ciências Biomédicas, Universidade de São Paulo. gustavo_fenner@icb.usp.br
