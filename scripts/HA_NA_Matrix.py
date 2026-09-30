@@ -47,6 +47,21 @@ mpl.rcParams["pdf.fonttype"] = 42
 mpl.rcParams["font.family"] = "sans-serif"
 
 # ==========================================================
+# STANDARD PLOT STYLE (shared across all heatmap/matrix scripts)
+# --------------------------------------------
+# Figure size scales with the matrix shape (CELL_SIZE inches per
+# row/column), so every heatmap keeps the same cell proportions
+# regardless of how many rows/columns it has.
+# ==========================================================
+
+CELL_SIZE = 0.55       # inches per heatmap cell
+PAD_W = 3.0             # extra width for y-axis labels + colorbar
+PAD_H = 2.0             # extra height for title + x-axis tick labels
+FONT_SIZE_BASE = 10
+FONT_SIZE_TITLE = 13
+FONT_SIZE_ANNOT = 10
+
+# ==========================================================
 # EXTRACT HA AND NA
 # --------------------------------------------
 # Keep only records where BOTH HA and NA are characterized.
@@ -90,7 +105,7 @@ print(f"NA subtypes present: {df['NA'].nunique()}")
 # ==========================================================
 
 sns.set_theme(style="white", context="paper")
-plt.rcParams.update({"font.size": 14})
+plt.rcParams.update({"font.size": FONT_SIZE_BASE})
 
 # Mask cells with 0 (grey background), keep Total row/column visible
 mask = heatmap_data.astype(float).replace(0, np.nan).isnull()
@@ -102,7 +117,8 @@ annot_data = heatmap_data.astype(str).mask(heatmap_data == 0, "")
 inner_max = heatmap_data.iloc[:-1, :-1].to_numpy().max()
 vmax = max(1, inner_max)
 
-fig, ax = plt.subplots(figsize=(30, 10))
+n_rows, n_cols = heatmap_data.shape
+fig, ax = plt.subplots(figsize=(n_cols * CELL_SIZE + PAD_W, n_rows * CELL_SIZE + PAD_H))
 ax.set_facecolor("#D9D9D9")
 
 sns.heatmap(
@@ -116,13 +132,13 @@ sns.heatmap(
     linecolor="white",
     vmin=1, vmax=vmax,
     cbar_kws={"label": "Number of detections"},
-    annot_kws={"size": 14, "weight": "bold"},
+    annot_kws={"size": FONT_SIZE_ANNOT, "weight": "bold"},
     ax=ax,
 )
 
 ax.set_title(
     "HA × NA subtype matrix",
-    fontsize=15, fontweight="bold", pad=12,
+    fontsize=FONT_SIZE_TITLE, fontweight="bold", pad=12,
 )
 ax.set_xlabel("NA subtype")
 ax.set_ylabel("HA subtype")
@@ -133,5 +149,5 @@ plt.tight_layout()
 plt.savefig(OUTPUT_DIR / "HA_NA_Matrix.svg", format="svg", bbox_inches="tight")
 plt.savefig(OUTPUT_DIR / "HA_NA_Matrix.png", dpi=600, bbox_inches="tight")
 plt.close()
-plt.show()
+
 print("\nSaved: HA_NA_Matrix.svg / .png")

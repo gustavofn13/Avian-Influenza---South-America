@@ -56,6 +56,21 @@ mpl.rcParams["pdf.fonttype"] = 42
 mpl.rcParams["font.family"] = "sans-serif"
 
 # ==========================================================
+# STANDARD PLOT STYLE (shared across all heatmap/matrix scripts)
+# --------------------------------------------
+# Figure size scales with the matrix shape (CELL_SIZE inches per
+# row/column), so every heatmap keeps the same cell proportions
+# regardless of how many rows/columns it has.
+# ==========================================================
+
+CELL_SIZE = 0.55       # inches per heatmap cell
+PAD_W = 3.0             # extra width for y-axis labels + colorbar
+PAD_H = 2.0             # extra height for title + x-axis tick labels
+FONT_SIZE_BASE = 10
+FONT_SIZE_TITLE = 13
+FONT_SIZE_ANNOT = 10
+
+# ==========================================================
 # BUILD MATRIX
 # ==========================================================
 
@@ -85,13 +100,14 @@ print(f"Grand total: {len(df)}")
 # ==========================================================
 
 sns.set_theme(style="white", context="paper")
-plt.rcParams.update({"font.size": 14})
+plt.rcParams.update({"font.size": FONT_SIZE_BASE})
 
 annot_data = heatmap_data.astype(str).mask(heatmap_data == 0, "")
 mask = heatmap_data.astype(float).replace(0, np.nan).isnull()
 vmax = max(1, heatmap_data.to_numpy().max())
 
-fig, ax = plt.subplots(figsize=(9, 5))
+n_rows, n_cols = heatmap_data.shape
+fig, ax = plt.subplots(figsize=(n_cols * CELL_SIZE + PAD_W, n_rows * CELL_SIZE + PAD_H))
 ax.set_facecolor("#D9D9D9")
 
 sns.heatmap(
@@ -105,12 +121,13 @@ sns.heatmap(
     linecolor="white",
     vmin=1, vmax=vmax,
     cbar_kws={"label": "Number of detections"},
+    annot_kws={"size": FONT_SIZE_ANNOT, "weight": "bold"},
     ax=ax,
 )
 
 ax.set_title(
     "Distribution of HA subtypes across South American countries",
-    fontsize=13, fontweight="bold", pad=12,
+    fontsize=FONT_SIZE_TITLE, fontweight="bold", pad=12,
 )
 ax.set_xlabel("HA subtype")
 ax.set_ylabel("Country")
