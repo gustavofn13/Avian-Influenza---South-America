@@ -4,7 +4,7 @@ Reproducibility package for the figures of the systematic-review manuscript:
 
 **"Eco-Epidemiological and Evolutionary Landscape of Avian Influenza Viruses in South America: A Continental Synthesis (2000–2024)"**
 
-This repository contains the curated dataset (Appendix 3) and the scripts that generate four of the five main figures directly from it. Running the four scripts on the provided AP3 file reproduces the published figures.
+This repository contains the curated dataset (Appendix 3), the scripts that generate the figures directly from it, the BEAST XML files used for the molecular clock / BSSVS analyses, and the phylogroup classification pipeline. Running `run_all.sh` on the provided AP3 file reproduces the published figures and tables.
 
 
 ---
@@ -21,8 +21,22 @@ aiv_south_america/
 │   ├── HA_Host_Heatmap.py                 # HA subtype × ecological group heatmap
 │   └── HA_NA_Matrix.py                    # HA × NA subtype matrix
 ├── output/                                # figures land here (SVG + PNG)
+├── xmls/                                  # BEAST XML files, one folder per gene (PB2/PB1/PA/NP/MP)
+│   └── <GENE>/
+│       ├── <GENE>_MOLCLOCK_SKYRIDE.xml    # molecular clock, Bayesian Skyride
+│       ├── <GENE>_MOLCLOCK_COA.xml        # molecular clock, constant coalescent
+│       ├── <GENE>_BSSVS_NORTH_HOST.xml    # BSSVS, North clade, host predictor
+│       ├── <GENE>_BSSVS_NORTH_LOCAL.xml   # BSSVS, North clade, location predictor
+│       ├── <GENE>_BSSVS_SOUTH_HOST.xml    # BSSVS, South clade, host predictor
+│       └── <GENE>_BSSVS_SOUTH_LOCAL.xml   # BSSVS, South clade, location predictor
+├── rename.py                              # standardizes the xmls/ file names (see script docstring)
+├── Phylogroup_github/                     # phylogroup classification pipeline
+│   ├── phylogroup_counts/                 # per-gene N/S clade assignment lists + table builder
+│   │   └── build_phylogroup_tables.py
+│   └── phylogroup_tanglegram/             # NP-backbone tanglegram figure
+│       └── make_tanglegram_figure.py
 ├── requirements.txt                       # exact package versions
-├── run_all.sh                             # runs all four scripts in sequence
+├── run_all.sh                             # runs the full pipeline in sequence
 └── README.md                              # this file
 ```
 
@@ -74,19 +88,26 @@ If starting from scratch on WSL, see "First-time setup" below.
 
 ## How to run
 
-**All four figures in one command:**
+**Everything in one command** (four AP3 figures + phylogroup tables + tanglegram figure):
 
 ```bash
 bash run_all.sh
 ```
 
-**Or one at a time:**
+**Or one step at a time:**
 
 ```bash
 python scripts/timeline_bubble.py
 python scripts/HA_Country_Heatmap.py
 python scripts/HA_Host_Heatmap.py
 python scripts/HA_NA_Matrix.py
+
+# phylogroup pipeline
+cd Phylogroup_github/phylogroup_counts
+python build_phylogroup_tables.py --ap3 ../../data/AP3_subtype_counts_oficial.xlsx --out .
+cp Table_B_new.csv ../phylogroup_tanglegram/Table_B_new.csv
+cd ../phylogroup_tanglegram
+python make_tanglegram_figure.py
 ```
 
 Each script prints a totals table to the terminal for verification (it should match the tables above) and saves the figure as SVG and PNG in the current directory.

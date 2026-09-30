@@ -3,3 +3,4 @@ numpy>=1.24,<3.0
 matplotlib>=3.7,<4.0
 seaborn>=0.12,<1.0
 openpyxl>=3.1,<4.0
+biopython>=1.81,<2.0

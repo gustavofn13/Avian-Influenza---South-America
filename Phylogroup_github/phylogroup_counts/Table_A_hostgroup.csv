@@ -1,0 +1,7 @@
+Host_group,PB2_S,PB2_N,PB1_S,PB1_N,PA_S,PA_N,NP_S,NP_N,MP_S,MP_N,Total_S,Total_N
+Environmental/Other,63,72,61,74,63,72,66,69,69,66,322,353
+Gulls/Seabirds,2,11,2,11,2,11,2,11,3,10,11,54
+Shorebirds,7,3,7,3,2,8,8,2,6,4,30,20
+Terrestrial/Domestic,19,2,19,2,19,2,19,2,19,2,95,10
+Waterfowl,68,10,69,9,68,10,68,10,68,10,341,49
+TOTAL,159,98,158,99,154,103,163,94,165,92,799,486

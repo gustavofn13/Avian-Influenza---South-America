@@ -19,9 +19,20 @@ python scripts/HA_Host_Heatmap.py
 echo ""
 echo "==> Generating HA x NA subtype matrix..."
 python scripts/HA_NA_Matrix.py
- 
+
+echo ""
+echo "==> Building phylogroup tables (Table A / Table B)..."
+(cd Phylogroup_github/phylogroup_counts && python build_phylogroup_tables.py \
+    --ap3 ../../data/AP3_subtype_counts_oficial.xlsx --out .)
+
+echo ""
+echo "==> Generating tanglegram figure..."
+cp Phylogroup_github/phylogroup_counts/Table_B_new.csv Phylogroup_github/phylogroup_tanglegram/Table_B_new.csv
+(cd Phylogroup_github/phylogroup_tanglegram && python make_tanglegram_figure.py)
+
 echo ""
 echo "==> All figures generated successfully."
 echo "    Check timeline_bubble.svg, HA_Country_Heatmap.svg,"
-echo "    HA_Host_Heatmap.svg, and HA_NA_Matrix.svg"
+echo "    HA_Host_Heatmap.svg, HA_NA_Matrix.svg, and"
+echo "    Phylogroup_github/phylogroup_tanglegram/tanglegram_figure.pdf"
  

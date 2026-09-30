@@ -1,0 +1,39 @@
+PHYLOGROUP TABLE BUILD REPORT
+============================================================
+
+METADATA SOURCES
+  AP3 xlsx: 310 records  (AP3_subtype_counts_oficial.xlsx)
+  ℹ️  Table_B CSV not found: Table_B.csv (optional)
+
+============================================================
+PHYLOGROUP FILE LOADING
+============================================================
+
+  PB2: 98 N  |  159 S  |  0 conflicts  |  257 total assigned
+
+  PB1: 99 N  |  158 S  |  0 conflicts  |  257 total assigned
+
+  PA: 103 N  |  154 S  |  0 conflicts  |  257 total assigned
+
+  NP: 94 N  |  163 S  |  0 conflicts  |  257 total assigned
+
+  MP: 92 N  |  165 S  |  0 conflicts  |  257 total assigned
+
+============================================================
+TABLE B CONSTRUCTION
+============================================================
+
+  Total isolates: 257
+  Without metadata: 0
+  Consistent-North: 77
+  Consistent-South: 145
+  Reassortant: 35
+
+============================================================
+OUTPUT FILES
+============================================================
+
+  ✓ Table_B_new.csv
+  ✓ Table_A_country.csv
+  ✓ Table_A_hostgroup.csv
+  ✓ phylogroup_report.txt

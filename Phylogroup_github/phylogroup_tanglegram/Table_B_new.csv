@@ -1,0 +1,258 @@
+EPI_ISL,isolate,year,subtype,country,host,host_group,PB2,PB1,PA,NP,MP,n_genes,class
+10304,A/cinnamon teal/Bolivia/4537/2001,2001,H7N3,Bolivia,Duck,Waterfowl,S,S,S,S,N,5,Reassortant
+110186,A/rosy-billed pochard/Argentina/CIP051-559/2007,2007,H9N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+138845,A/black bellied whistling duck/Colombia/1/2011,2011,H5N2,Colombia,Dendrocygna autumnalis,Environmental/Other,N,S,N,N,N,5,Reassortant
+138846,A/white faced whistling duck/Colombia/1/2011,2011,H5N2,Colombia,Dendrocygna viduata,Environmental/Other,N,S,N,N,N,5,Reassortant
+154833,A/seagull/Chile/5775/2009,2009,H13N9,Chile,Larus pipixcan,Environmental/Other,N,N,S,N,N,5,Reassortant
+161506,A/ruddy turnstone/Ilha de Canelas/A08/2008,2008,H11N9,Brazil,Arenaria interpres,Environmental/Other,N,N,N,N,N,5,Consistent-North
+161507,A/ruddy turnstone/Ilha de Canelas/A17/2008,2008,H11N9,Brazil,Arenaria interpres,Environmental/Other,N,N,N,N,N,5,Consistent-North
+161508,A/ruddy turnstone/Ilha de Canelas/A51/2008,2008,H11N9,Brazil,Arenaria interpres,Environmental/Other,N,N,N,N,N,5,Consistent-North
+16853773,A/kelp gull/Chile/C21939/2017,2017,H5N6,Chile,Gull,Gulls/Seabirds,S,S,S,S,S,5,Consistent-South
+17088885,A/white rumped sandpiper/Brazil/PNLP_SM10/2023,2023,H11N2,Brazil,White-rumped sandpiper,Shorebirds,N,N,N,S,N,5,Reassortant
+18058051,A/white rumped sandpiper/Goias/RS1193/2012,2012,H2N2,Brazil,Other avian,Environmental/Other,N,N,N,S,S,5,Reassortant
+18058052,A/white rumped sandpiper/Rio de Janeiro/PNRJ049/2019,2019,H2N1,Brazil,Other avian,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189968,A/moorhen/Peru/120/2009,2009,H1N9,Peru,Gallinula chloropus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189969,A/gull/Peru/CH02/2009,2009,H13N2,Peru,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+189970,A/duck/Peru/CH36/2010,2010,H11N9,Chile,Duck,Waterfowl,N,N,N,N,N,5,Consistent-North
+189971,A/gull/Peru/CH121/2010,2010,H13N2,Peru,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+189973,A/willet/Peru-CH49/2010,2010,H6N8,Peru,Catoptrophorus semipalmatus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189974,A/egret/Peru-CH50/2010,2010,H6N8,Peru,Avian,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189975,A/black skimmer/Peru/CH55/2010,2010,H13N2,Peru,Rynchops niger,Environmental/Other,N,N,S,N,N,5,Reassortant
+189977,A/duck/Peru/MM17/2007,2007,H4N5,Peru,Duck,Waterfowl,N,N,N,N,N,5,Consistent-North
+189979,A/duck/Peru/P114/2009,2009,H3N2,Peru,Duck,Waterfowl,N,N,N,N,N,5,Consistent-North
+189980,A/whimbrel/Peru/P41/2007,2007,H13N2,Peru,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189981,A/gull/Peru/P43/2007,2007,H13N2,Peru,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+189983,A/curlew/Peru/PuV178/2009,2009,H3N1,Peru,curlew,Shorebirds,N,N,N,N,N,5,Consistent-North
+189984,A/ruddy turnstone/Peru/PuV182/2009,2009,H3N1,Peru,Arenaria interpres,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189986,A/ruddy turnstone/Peru/PuV51/2008,2008,H12N5,Peru,Arenaria interpres,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189987,A/ruddy turnstone/Peru/PuV52/2008,2008,H12N5,Peru,Arenaria interpres,Environmental/Other,N,N,N,N,N,5,Consistent-North
+189989,A/gull/Peru/PuV172/2009,2009,H1N1,Peru,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+190021,A/ruddy turnstone/Peru/MM149/2008,2008,H10N7,Peru,Arenaria interpres,Environmental/Other,N,N,N,N,N,5,Consistent-North
+190227,A/duck/Peru/PV80/2008,2008,H2N9,Peru,Duck,Waterfowl,N,N,N,N,N,5,Consistent-North
+19109822,A/Amazonetta brasiliensis/Brazil/23SC1A01557/2023,2023,H6N2,Brazil,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19167898,A/black-necked swan/Chile/C32668/2017,2017,H4N5,Chile,Swan,Waterfowl,S,S,S,S,S,5,Consistent-South
+19167899,A/black-necked swan/Chile/C32669/2017,2017,H4N5,Chile,Swan,Waterfowl,S,S,S,S,S,5,Consistent-South
+19167903,A/cinnamon teal/Chile/C37724/2018,2018,H7N9,Chile,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19167909,A/environment/Chile/C26839/2017,2017,H3N8,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167910,A/environment/Chile/C33205/2017,2017,H3N8,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167912,A/environment/Chile/C33763/2017,2017,H6N2,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167913,A/environment/Chile/C33928/2017,2017,H3N8,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167914,A/environment/Chile/C33933/2017,2017,H3N8,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167916,A/environment/Chile/C39308/2018,2018,H6N8,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167920,A/environment/Chile/C61179/2022,2022,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19167921,A/environment/Chile/C61191/2022,2022,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19167923,A/environment/Chile/C62019/2022,2022,H13N8,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19167927,A/environment/Chile/C62070/2022,2022,H13N8,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19167928,A/environment/Chile/C62071/2022,2022,H4N6,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167930,A/environment/Chile/C62173/2022,2022,H13N8,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19167931,A/environment/Chile/C62701/2023,2023,H4N6,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167932,A/environment/Chile/C62702/2023,2023,H4N6,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167937,A/environment/Chile/C63153/2023,2023,H12N5,Chile,Environment,Environmental/Other,S,S,S,S,S,5,Consistent-South
+19167938,A/environment/Chile/C63181/2023,2023,H5N7,Chile,Environment,Environmental/Other,S,S,S,S,N,5,Reassortant
+19167941,A/environment/Chile/C63385/2023,2023,H13N8,Chile,Environment,Environmental/Other,S,N,S,S,N,5,Reassortant
+19167942,A/environment/Chile/C63396/2023,2023,H13N9,Chile,Environment,Environmental/Other,S,S,S,S,N,5,Reassortant
+19167944,A/environment/Chile/C63602/2023,2023,H13N9,Chile,Environment,Environmental/Other,N,N,N,S,N,5,Reassortant
+19167949,A/environment/Chile/C64116/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,S,5,Reassortant
+19167950,A/environment/Chile/C64305/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19167952,A/environment/Chile/C64475/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,S,5,Reassortant
+19167953,A/environment/Chile/C64493/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,S,5,Reassortant
+19167954,A/environment/Chile/C64535/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,S,5,Reassortant
+19167957,A/environment/Chile/C64571/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19167959,A/environment/Chile/C64587/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,S,5,Reassortant
+19167960,A/environment/Chile/C64598/2023,2023,H6N8,Chile,Environment,Environmental/Other,N,N,N,N,S,5,Reassortant
+19167962,A/kelp gull/Chile/C23527/2017,2017,H13N8,Chile,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+19167963,A/kelp gull/Chile/C28929/2017,2017,H13N2,Chile,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+19167966,A/kelp gull/Chile/C34600/2017,2017,H9N8,Chile,Gull,Gulls/Seabirds,N,N,N,N,S,5,Reassortant
+19167967,A/kelp gull/Chile/C38400/2018,2018,H13N2,Chile,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+19167968,A/kelp gull/Chile/C58127/2022,2022,H13N2,Chile,Gull,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+19167969,A/mallard duck/Chile/C38022/2018,2018,H13N2,Chile,Duck,Waterfowl,N,N,N,N,N,5,Consistent-North
+19167981,A/yellow-billed pintail/Chile/C30916/2017,2017,H3N8,Chile,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19167982,A/yellow-billed pintail/Chile/C38397/2018,2018,H13N2,Chile,Duck,Waterfowl,N,N,N,N,N,5,Consistent-North
+19167983,A/yellow-billed pintail/Chile/C38684/2018,2018,H9N2,Chile,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19167985,A/yellow-billed teal/Chile/C41205/2018,2018,H13N2,Chile,Duck,Waterfowl,N,N,N,N,N,5,Consistent-North
+19178105,A/whimbrel/Chile/C20114/2016,2016,H13N9,Chile,Avian,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19182797,A/environment/Chile/C38016/2018,2018,H13N2,Chile,Environment,Environmental/Other,N,N,N,N,N,5,Consistent-North
+19404911,A/kelp gull/Los Lagos/235429-1/2023,2023,H9N2,Chile,Gull,Gulls/Seabirds,S,S,S,S,S,5,Consistent-South
+19410275,A/Chilean teal/Nuble/233516-2/2023,2023,H5N1,Chile,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703738,A/Brazilian teal/Argentina/CIP112-3391/2017,2017,H6N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703739,A/yellow-billed pintail/Argentina/CIP112-3689/2019,2019,H6N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703740,A/yellow-billed pintail/Argentina/CIP112-3917/2019,2019,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703741,A/yellow-billed pintail/Argentina/CIP112-3919/2019,2019,H4N6,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703742,A/yellow-billed pintail/Argentina/CIP112-3927/2019,2019,H11N9,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703744,A/yellow-billed pintail/Argentina/CIP112-3943/2019,2019,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703745,A/yellow-billed pintail/Argentina/CIP112-3944/2019,2019,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703746,A/yellow-billed pintail/Argentina/CIP112-3946/2019,2019,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703747,A/yellow-billed pintail/Argentina/CIP112-3947/2019,2019,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703748,A/yellow-billed pintail/Argentina/CIP112-3952/2019,2019,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703749,A/yellow-billed pintail/Argentina/CIP112-4062/2019,2019,H3N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703750,A/yellow-billed teal/Argentina/CIP112-2846/2017,2017,H4N6,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703751,A/yellow-billed teal/Argentina/CIP112-3032/2017,2017,H2N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703752,A/yellow-billed teal/Argentina/CIP112-3039/2017,2017,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703753,A/yellow-billed teal/Argentina/CIP112-3201/2018,2018,H2N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703754,A/yellow-billed teal/Argentina/CIP112-3640/2019,2019,H9N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703755,A/yellow-billed teal/Argentina/CIP112-3697/2019,2019,H11N9,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703757,A/yellow-billed teal/Argentina/CIP112-3709/2019,2019,H4N6,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703758,A/yellow-billed teal/Argentina/CIP112-3749/2019,2019,H8N4,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703759,A/yellow-billed pintail/Argentina/CIP112-3626/2019,2019,H3N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703760,A/yellow-billed pintail/Argentina/CIP112-2690/2017,2017,H4N6,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703762,A/white-cheeked pintail/Argentina/CIP112-4221/2019,2019,H4N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703763,A/white-cheeked pintail/Argentina/CIP112-4218/2019,2019,H4N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703764,A/cinnamon teal/Argentina/CIP112-3955/2019,2019,H10N7,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703767,A/red shoveler/Argentina/CIP112-3106/2017,2017,H1N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703768,A/ringed teal/Argentina/CIP112-2939/2017,2017,H9N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703770,A/rosy-billed pochard/Argentina/CIP112-2796/2017,2017,H4N6,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703771,A/yellow-billed teal/Argentina/CIP112-3959/2019,2019,H11N9,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703772,A/rosy-billed pochard/Argentina/CIP112-2836/2017,2017,H9N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703773,A/rosy-billed pochard/Argentina/CIP112-3516/2019,2019,H6N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703786,A/rosy-billed pochard/Argentina/CIP112-4120/2019,2019,H6N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703788,A/rosy-billed pochard/Argentina/CIP112-4123/2019,2019,H6N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703789,A/silver teal/Argentina/CIP112-4252/2019,2019,H7N3,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703790,A/silver teal/Argentina/CIP112-4265/2019,2019,H10N7,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703793,A/silver teal/Argentina/CIP112-4268/2019,2019,H4N6,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703794,A/white-cheeked pintail/Argentina/CIP112-3431/2018,2018,H2N1,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703795,A/white-cheeked pintail/Argentina/CIP112-4200/2019,2019,H6N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703796,A/rosy-billed pochard/Argentina/CIP112-3449/2017,2017,H5N3,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+19703797,A/yellow-billed teal/Argentina/CIP112-4112/2019,2019,H4N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+20100728,A/Calidris fuscicollis/Brazil/PNLP_222/2024,2024,H1N8,Brazil,Avian,Environmental/Other,N,N,N,S,N,5,Reassortant
+221436,A/helmeted guineafowl/Colombia/2440/2015,2015,H11N2,Colombia,Numida meleagris,Terrestrial/Domestic,N,N,N,N,N,5,Consistent-North
+222691,A/Chilean teal/Chile/C918/2015,2015,H4N2,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+222692,A/mallard/Chile/C948/2015,2015,H4N2,Chile,Anas platyrhynchos,Environmental/Other,S,S,S,S,S,5,Consistent-South
+222693,A/yellow-billed pintail/Chile/C1267/2015,2015,H5N3,Chile,Anas georgica,Environmental/Other,S,N,S,S,S,5,Reassortant
+222694,A/gray plover/Chile/C1313/2015,2015,H9N7,Chile,Avian,Environmental/Other,N,N,N,S,S,5,Reassortant
+222695,A/American oystercatcher/Chile/C1307/2015,2015,H9N2,Chile,Avian,Environmental/Other,N,S,N,S,S,5,Reassortant
+224764,A/yellow-billed pintail/Chile/6/2013,2013,H4N6,Chile,Avian,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224870,A/helmeted guineafowl/Colombia/2/2015,2015,H11N2,Colombia,Numida meleagris,Terrestrial/Domestic,N,N,N,N,N,5,Consistent-North
+224871,A/white-faced whistling duck/Colombia/1/2011,2011,H5N2,Colombia,Duck,Waterfowl,N,S,N,N,N,5,Reassortant
+224872,A/black-bellied whistling duck/Colombia/1/2011,2011,H5N2,Colombia,Duck,Waterfowl,N,S,N,N,N,5,Reassortant
+224873,A/yellow-billed pintail/Chile/1/2012,2012,H1N1,Chile,Duck,Waterfowl,S,N,S,S,S,5,Reassortant
+224874,A/black-necked stilt/Chile/3/2013,2013,H11N9,Chile,Avian,Environmental/Other,N,N,N,N,N,5,Consistent-North
+224875,A/black-necked stilt/Chile/4/2013,2013,H11N9,Chile,Avian,Environmental/Other,N,N,N,N,N,5,Consistent-North
+224876,A/yellow-billed pintail/Chile/10/2014,2014,H7N3,Chile,Avian,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224877,A/yellow-billed pintail/Chile/11/2014,2014,H7N3,Chile,Avian,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224878,A/yellow-billed teal/Chile/12/2014,2014,H7N3,Chile,Avian,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224986,A/Chilean teal/Chile/9/2013,2013,H7N6,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224987,A/yellow-billed pintail/Chile/7/2013,2013,H4N6,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224991,A/yellow-billed pintail/Chile/10/2014,2014,H7N3,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224992,A/yellow-billed pintail/Chile/11/2014,2014,H7N3,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+224994,A/yellow-billed pintail/Chile/1/2012,2012,H1N1,Chile,Anas georgica,Environmental/Other,S,N,S,S,S,5,Reassortant
+225000,A/black-necked stilt/Chile/2/2013,2013,H11N9,Chile,Avian,Environmental/Other,N,N,N,N,N,5,Consistent-North
+225001,A/black-necked stilt/Chile/1/2013,2013,H11N9,Chile,Avian,Environmental/Other,N,N,N,N,N,5,Consistent-North
+225002,A/red-fronted coot/Chile/5/2013,2013,H3N6,Chile,Avian,Environmental/Other,S,S,S,S,S,5,Consistent-South
+234305,A/white-rumped sandpiper/Lagoa do Peixe/RS1147/2012,2012,H6N1,Brazil,Calidris fuscicollis,Shorebirds,S,S,N,S,S,5,Reassortant
+234306,A/white-rumped sandpiper/Lagoa do Peixe/RS1167/2012,2012,H6N1,Brazil,Calidris fuscicollis,Shorebirds,S,S,N,S,N,5,Reassortant
+234307,A/white-rumped sandpiper/Lagoa do Peixe/RS1169/2012,2012,H6N1,Brazil,Calidris fuscicollis,Shorebirds,S,S,N,S,S,5,Reassortant
+234311,A/white-rumped sandpiper/Lagoa do Peixe/RS1177/2012,2012,H6N1,Brazil,Calidris fuscicollis,Shorebirds,S,S,N,S,S,5,Reassortant
+234312,A/white-rumped sandpiper/Lagoa do Peixe/RS1196/2012,2012,H6N1,Brazil,Calidris fuscicollis,Shorebirds,S,S,N,S,S,5,Reassortant
+24568,A/kelp gull/Argentina/LDC4/2006,2006,H13N9,Argentina,Larus dominicanus,Environmental/Other,S,S,S,S,S,5,Consistent-South
+257108,A/yellow-billed pintail/Chile/C2014/2015,2015,H3N8,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+257109,A/yellow-billed pintail/Chile/C4256/2015,2015,H10N1,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+257110,A/mallard duck/Chile/C4079/2015,2015,H1N1,Chile,Anas platyrhynchos,Environmental/Other,S,S,S,S,S,5,Consistent-South
+257111,A/yellow-billed teal/Chile/C4126/2015,2015,H1N1,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+257112,A/yellow-billed teal/Chile/C5750/2016,2016,H12N5,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+257113,A/yellow-billed teal/Chile/C4131/2015,2015,H1N1,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+257122,A/blackish oystercatcher/Chile/C6534/2016,2016,H2N2,Chile,Sandpiper,Shorebirds,S,S,S,S,S,5,Consistent-South
+326953,A/dolphin gull/Chile/C10783/2016,2016,H16N3,Chile,Leucophaeus scoresbii,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326959,A/kelp gull/Chile/C10779/2016,2016,H16N3,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326960,A/yellow-billed pintail/Chile/C14830/2016,2016,H12N5,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326961,A/kelp gull/Chile/C10826/2016,2016,H16N3,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326962,A/kelp gull/Chile/C12395/2016,2016,H6N2,Chile,Larus dominicanus,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326963,A/kelp gull/Chile/C12396/2016,2016,H6N2,Chile,Larus dominicanus,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326964,A/yellow-billed pintail/Chile/C14719/2016,2016,H7N3,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326965,A/kelp gull/Chile/C12508/2016,2016,H13N2,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326966,A/mallard/Chile/C14590/2016,2016,H9N2,Chile,Anas platyrhynchos,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326967,A/kelp gull/Chile/C10579/2016,2016,H16N3,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326968,A/yellow-billed pintail/Chile/C9588/2016,2016,H4N2,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326969,A/yellow-billed pintail/Chile/C13198/2016,2016,H1N1,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326970,A/red shoveler/Chile/C14653/2016,2016,H11N9,Chile,Anas platalea,Environmental/Other,N,N,N,N,S,5,Reassortant
+326972,A/kelp gull/Chile/C10798/2016,2016,H16N3,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326973,A/whimbrel/Chile/C12523/2016,2016,H13N2,Chile,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326975,A/whimbrel/Chile/C10834/2016,2016,H13N2,Chile,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+326976,A/yellow-billed pintail/Chile/C14831/2016,2016,H12N5,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326978,A/mallard/Chile/C9763/2016,2016,H6N8,Chile,Anas platyrhynchos,Environmental/Other,S,S,S,S,S,5,Consistent-South
+326979,A/mallard/Chile/C14592/2016,2016,H9N2,Chile,Anas platyrhynchos,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327586,A/yellow-billed teal/Chile/C20255/2016,2016,H10N7,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327587,A/yellow-billed teal/Chile/C8711/2016,2016,H11N9,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327588,A/yellow-billed teal/Chile/C8619/2016,2016,H11N9,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327589,A/yellow-billed teal/Chile/C26822/2017,2017,H1N9,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327591,A/yellow-billed pintail/Chile/C26936/2017,2017,H1N9,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327592,A/yellow-billed teal/Chile/C8620/2016,2016,H11N9,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327593,A/yellow-billed pintail/Chile/C19357/2016,2016,H10N7,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327594,A/yellow-billed pintail/Chile/C19338/2016,2016,H10N7,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327595,A/whimbrel/Chile/C20147/2016,2016,H13N9,Chile,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327596,A/whimbrel/Chile/C9351/2016,2016,H1N1,Chile,Numenius phaeopus,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327597,A/whimbrel/Chile/C20144/2016,2016,H13N9,Chile,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327598,A/whimbrel/Chile/C20106/2016,2016,H13N9,Chile,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327599,A/whimbrel/Chile/C20075/2016,2016,H13N9,Chile,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327600,A/whimbrel/Chile/C20073/2016,2016,H13N9,Chile,Numenius phaeopus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327601,A/kelp gull/Chile/C8939/2016,2016,H13N2,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327602,A/kelp gull/Chile/C8609/2016,2016,H13N2,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327603,A/kelp gull/Chile/C8594/2016,2016,H13N2,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327604,A/kelp gull/Chile/C8595/2016,2016,H13N2,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327605,A/kelp gull/Chile/C8599/2016,2016,H13N2,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327606,A/kelp gull/Chile/C8602/2016,2016,H13N2,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327607,A/kelp gull/Chile/C27733/2017,2017,H13N8,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327608,A/kelp gull/Chile/C27585/2017,2017,H6N8,Chile,Larus dominicanus,Environmental/Other,S,N,N,N,S,5,Reassortant
+327609,A/kelp gull/Chile/C20137/2016,2016,H13N9,Chile,Larus dominicanus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327610,A/elegant tern/Chile/C20085/2016,2016,H13N9,Chile,Sterna elegans,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+327611,A/elegant tern/Chile/C20093/2016,2016,H13N9,Chile,Sterna elegans,Gulls/Seabirds,N,N,N,N,N,5,Consistent-North
+327619,A/black skimmer/Chile/C20142/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327620,A/black skimmer/Chile/C20124/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327621,A/black skimmer/Chile/C20123/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327622,A/black skimmer/Chile/C20140/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327623,A/black skimmer/Chile/C20108/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327624,A/black skimmer/Chile/C20057/2016,2016,H13N8,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327625,A/black skimmer/Chile/C20100/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327626,A/black skimmer/Chile/C20084/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327627,A/black skimmer/Chile/C20077/2016,2016,H13N9,Chile,Rynchops niger,Environmental/Other,N,N,N,N,N,5,Consistent-North
+327630,A/yellow-billed teal/Chile/C8687/2016,2016,H7N6,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+327631,A/yellow-billed teal/Chile/C26947/2017,2017,H7N6,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+3514,A/chicken/Chile/176822/02,2002,H7N3,Chile,Chicken,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+3516,A/chicken/Chile/4957/02,2002,H7N3,Chile,Chicken,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+379427,A/yellow-billed teal/Chile/C25813/2017,2017,H7N6,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+379428,A/yellow-billed teal/Chile/C25814/2017,2017,H7N6,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+379430,A/mallard duck/Chile/C23961/2017,2017,H5N3,Chile,Anas platyrhynchos,Environmental/Other,S,S,S,S,S,5,Consistent-South
+379432,A/yellow-billed teal/Chile/C24042/2017,2017,H5N3,Chile,Anas flavirostris,Environmental/Other,S,S,S,S,S,5,Consistent-South
+379433,A/yellow-billed pintail/Chile/C30974/2017,2017,H3N8,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+379436,A/yellow-billed pintail/Chile/C34473/2017,2017,H3N8,Chile,Anas georgica,Environmental/Other,S,S,S,S,S,5,Consistent-South
+379811,A/turkey/Chile/17-002742-9/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+379812,A/turkey/Chile/17-002742-4/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+379813,A/turkey/Chile/17-002742-8/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+379814,A/turkey/Chile/17-002745-1/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+379815,A/turkey/Chile/17-002742-3/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+379816,A/turkey/Chile/17-002745-2/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+379919,A/cinnamon teal/Argentina/CIP051-1588/2009,2009,H7N9,Argentina,Cinnamon Teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+379920,A/cinnamon teal/Argentina/CIP051-432/2011,2011,H1N1,Argentina,Cinnamon Teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+379988,A/comb duck/Argentina/CIP051-49/2011,2011,H6N2,Argentina,Comb duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+380990,A/white-backed stilt/Chile/C24619/2017,2017,H5N9,Chile,Himantopus himantopus melanurus,Environmental/Other,S,N,N,N,N,5,Reassortant
+380993,A/silver teal/Argentina/CIP051-32/2011,2011,H4N2,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+380994,A/silver teal/Argentina/CIP051-171/2011,2011,H10N7,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+380995,A/silver teal/Argentina/CIP051-1737/2009,2009,H5N3,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+380996,A/silver teal/Argentina/CIP051-175/2011,2011,H10N7,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+380997,A/silver teal/Argentina/CIP051-188/2011,2011,H7N7,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+380998,A/silver teal/Argentina/CIP051-25/2011,2011,H4N8,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+380999,A/silver teal/Argentina/CIP051-48/2011,2011,H4N6,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+381000,A/silver teal/Argentina/CIP051-52/2011,2011,H6N2,Argentina,Silver teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+381001,A/yellow-billed pintail/Argentina/CIP112-1174A/2016,2016,H6N2,Argentina,Yellow-billed pintail,Waterfowl,S,S,S,S,S,5,Consistent-South
+381002,A/yellow-billed teal/Argentina/CIP051-91/2011,2011,H4N6,Argentina,Yellow-billed teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+381003,A/yellow-billed teal/Argentina/CIP112-1227/2016,2016,H4N6,Argentina,Yellow-billed teal,Waterfowl,S,S,S,S,S,5,Consistent-South
+381783,A/Meleagris gallopavo/Valparaiso/890_5/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381784,A/Meleagris gallopavo/Valparaiso/890-11/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381785,A/Meleagris gallopavo/Valparaiso/890-12/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381786,A/Meleagris gallopavo/Valparaiso/890-6/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381787,A/Meleagris gallopavo/Valparaiso/10_2_10/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381788,A/Meleagris gallopavo/Valparaiso/10_5_13/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381789,A/Meleagris gallopavo/Valparaiso/11_2_22/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381790,A/Meleagris gallopavo/Valparaiso/13_4_12/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+381791,A/Meleagris gallopavo/Valparaiso/22/2017,2017,H7N6,Chile,Meleagris gallopavo,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+397478,A/white-backed stilt/Chile/C20090/2016,2016,H13N9,Chile,Himantopus himantopus melanurus,Environmental/Other,N,N,N,N,N,5,Consistent-North
+4062118,A/chicken/Rapa Nui/CT2170/2019,2019,H6N1,Chile,Gallus gallus,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+63144,A/red-winged tinamou/Argentina/MP1/2008,2008,H1N1,Argentina,Other avian,Environmental/Other,S,S,S,S,S,5,Consistent-South
+67718,A/chicken/Chile/184240-1/2002,2002,H7N3,Chile,Chicken,Terrestrial/Domestic,S,S,S,S,S,5,Consistent-South
+6795365,A/Mallard/Peru/M6/2019,2019,H2N6,Peru,Mallard,Waterfowl,N,N,N,N,S,5,Reassortant
+77372,A/rosy-billed pochard/Argentina/CIP051-557/2007,2007,H6N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+77373,A/rosy-billed pochard/Argentina/CIP051-575/2007,2007,H6N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+77374,A/rosy-billed pochard/Argentina/CIP051-925/2008,2008,H6N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+94360,A/rosy-billed pochard/Argentina/CIP051-269/2007,2007,H6N8,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+94361,A/rosy-billed pochard/Argentina/CIP051-1977/2010,2010,H6N2,Argentina,Duck,Waterfowl,S,S,S,S,S,5,Consistent-South
+,A/blackish oystercatcher/Chile/C38127/2018,2018,H1N1,Chile,blackish oystercatcher,Shorebirds,S,S,S,S,S,5,Consistent-South
+,A/collared plover/Mato Grosso/Pantanal1403/2023,2023,H5N2,Brazil,Charadrius collaris,Shorebirds,N,N,N,N,N,5,Consistent-North
