@@ -2,11 +2,9 @@
 """
 Tanglegram exploration figure (A4, single page)
 ================================================
-Top: 4 small tanglegrams, NP vs each of the other genes (PB2, PB1, PA, MP).
-     Branches/links colored by phylogroup (per-gene S/N assignment).
-Bottom: two compatibility heatmaps — host x phylogroup and country x
-        phylogroup, percentages computed over the full 257-isolate set,
-        phylogroup taken from the NP (backbone) column.
+4 small tanglegrams, NP vs each of the other genes (PB2, PB1, PA, MP).
+Branches/links colored by phylogroup (per-gene S/N assignment).
+Each tree carries its own branch-length scale bar (substitutions/site).
 
 Inputs : treefiles/{1_PB2,2_PB1,3_PA,5_NP,7_MP}_INTERSECT.treefile
          Table_B_new.csv
@@ -56,19 +54,13 @@ PHYLO_COLOR = {"N": COL_NORTH, "S": COL_SOUTH, "": COL_MISS}
 FONT = "DejaVu Serif"
 FS_TITLE   = 15
 FS_SUBTITLE = 10
-FS_TABLE_LABEL = 8.5
-FS_TABLE_CELL  = 8
 FS_LEGEND = 9
+FS_SCALE = 6
 
 LW_TREE = 0.35
 LW_LINK = 0.4
+LW_SCALE = 0.8
 ALPHA_LINK = 0.55
-
-HOST_ORDER = [
-    "Waterfowl", "Shorebirds", "Gulls/Seabirds",
-    "Terrestrial/Domestic", "Environmental/Other",
-]
-COUNTRY_ORDER = ["Chile", "Argentina", "Peru", "Brazil", "Colombia", "Bolivia", "Unknown"]
 
 # ══════════════════════════════════════════════════════════════════════════════
 # helpers
@@ -145,6 +137,16 @@ def load_tree(path):
     return tree, coords, tips, max_x
 
 
+def nice_scale_value(target):
+    """Round `target` down to a '1/2/5 x 10^k' value, for a clean scale-bar length."""
+    if target <= 0:
+        return 0.001
+    exp = np.floor(np.log10(target))
+    frac = target / 10 ** exp
+    nice = 1 if frac < 1.5 else 2 if frac < 3.5 else 5 if frac < 7.5 else 10
+    return nice * 10 ** exp
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 # STEP 1 — Load Table B
 # ══════════════════════════════════════════════════════════════════════════════
@@ -178,8 +180,7 @@ fig = plt.figure(figsize=(8.27, 11.69))
 fig.patch.set_facecolor('white')
 
 gs_title  = gridspec.GridSpec(1, 1, figure=fig, left=0.05, right=0.95, top=0.99, bottom=0.905)
-gs_tangle = gridspec.GridSpec(1, 1, figure=fig, left=0.03, right=0.99, top=0.885, bottom=0.335)
-gs_tables = gridspec.GridSpec(1, 1, figure=fig, left=0.17, right=0.97, top=0.295, bottom=0.065)
+gs_tangle = gridspec.GridSpec(1, 1, figure=fig, left=0.03, right=0.99, top=0.885, bottom=0.06)
 
 # ── Title ────────────────────────────────────────────────────────────────────
 ax_title = fig.add_subplot(gs_title[0])
@@ -257,61 +258,34 @@ for k, (left_gene, right_gene) in enumerate(PAIRS):
 
     n_l = len(l_tips)
     n_r = len(r_tips)
+    n_max = max(n_l, n_r)
+    pad_bottom = max(12, round(0.06 * n_max))
     ax.set_xlim(-1.05, GAP + 1.05)
-    ax.set_ylim(-3, max(n_l, n_r) + 2)
+    ax.set_ylim(-3, n_max + pad_bottom)
     ax.invert_yaxis()
     ax.axis('off')
     ax.set_title(f"{left_gene} vs {right_gene}", fontname=FONT,
                  fontsize=FS_SUBTITLE + 1, fontweight='bold', pad=3)
 
-# ── Compatibility tables ─────────────────────────────────────────────────────
-table_gs = gridspec.GridSpecFromSubplotSpec(1, 2, subplot_spec=gs_tables[0], wspace=0.6)
+    # ── Branch-length scale bars (each tree keeps its own real scale) ──────────
+    y_bar = n_max + pad_bottom * 0.45
+    y_label = n_max + pad_bottom * 0.8
 
-total_n = len(tb)
+    l_scale = nice_scale_value(0.2 * l_max_x) if l_max_x > 0 else 0.001
+    l_bar_len = (l_scale / l_max_x) if l_max_x > 0 else 0.0
+    l_x0 = t_left(0.0)
+    ax.plot([l_x0, l_x0 + l_bar_len], [y_bar, y_bar],
+            color='black', linewidth=LW_SCALE, solid_capstyle='butt', clip_on=False)
+    ax.text(l_x0 + l_bar_len / 2, y_label, f"{l_scale:.4g}",
+            ha='center', va='top', fontsize=FS_SCALE, fontname=FONT, clip_on=False)
 
-
-def compat_matrix(category_col, order, fill_value="Unknown"):
-    cats = tb[category_col].replace('', fill_value)
-    counts = np.zeros((len(order), 2))  # columns: South, North
-    for i, cat in enumerate(order):
-        counts[i, 0] = ((cats == cat) & (tb['NP'] == 'S')).sum()
-        counts[i, 1] = ((cats == cat) & (tb['NP'] == 'N')).sum()
-    pct = counts / total_n * 100
-    return counts, pct
-
-
-def draw_compat_table(ax, title, order, counts, pct):
-    ax.imshow(pct, aspect='auto', cmap='YlOrRd', vmin=0, vmax=pct.max() * 1.1,
-              interpolation='nearest')
-    for i in range(len(order)):
-        for j in range(2):
-            txt_color = 'white' if pct[i, j] > pct.max() * 0.55 else 'black'
-            ax.text(j, i, f"{int(counts[i, j])}\n({pct[i, j]:.1f}%)",
-                    ha='center', va='center', fontsize=FS_TABLE_CELL,
-                    color=txt_color, fontname=FONT)
-    ax.set_xticks([0, 1])
-    ax.set_xticklabels(['South', 'North'], fontsize=FS_TABLE_LABEL, fontweight='bold', fontname=FONT)
-    ax.set_yticks(range(len(order)))
-    ax.set_yticklabels(order, fontsize=FS_TABLE_LABEL, fontname=FONT)
-    ax.xaxis.set_ticks_position('top')
-    ax.set_title(title, fontsize=FS_SUBTITLE + 1, fontweight='bold', fontname=FONT, pad=28)
-    for sp in ax.spines.values():
-        sp.set_visible(False)
-    ax.set_xticks(np.arange(-0.5, 2, 1), minor=True)
-    ax.set_yticks(np.arange(-0.5, len(order), 1), minor=True)
-    ax.grid(which='minor', color='white', linewidth=1.5)
-    ax.tick_params(which='minor', length=0)
-
-
-ax_host = fig.add_subplot(table_gs[0])
-host_counts, host_pct = compat_matrix('host_group', HOST_ORDER)
-draw_compat_table(ax_host, f"Host group vs. phylogroup (NP)\n% of {total_n} isolates",
-                   HOST_ORDER, host_counts, host_pct)
-
-ax_ctry = fig.add_subplot(table_gs[1])
-ctry_counts, ctry_pct = compat_matrix('country', COUNTRY_ORDER)
-draw_compat_table(ax_ctry, f"Country vs. phylogroup (NP)\n% of {total_n} isolates",
-                   COUNTRY_ORDER, ctry_counts, ctry_pct)
+    r_scale = nice_scale_value(0.2 * r_max_x) if r_max_x > 0 else 0.001
+    r_bar_len = (r_scale / r_max_x) if r_max_x > 0 else 0.0
+    r_x0 = t_right(0.0)
+    ax.plot([r_x0, r_x0 - r_bar_len], [y_bar, y_bar],
+            color='black', linewidth=LW_SCALE, solid_capstyle='butt', clip_on=False)
+    ax.text(r_x0 - r_bar_len / 2, y_label, f"{r_scale:.4g}",
+            ha='center', va='top', fontsize=FS_SCALE, fontname=FONT, clip_on=False)
 
 # ── Legend ───────────────────────────────────────────────────────────────────
 legend_patches = [
@@ -320,7 +294,7 @@ legend_patches = [
     mpatches.Patch(color=COL_MISS,  label='Not classified'),
 ]
 fig.legend(handles=legend_patches, loc='lower center', ncol=3,
-           bbox_to_anchor=(0.5, 0.005), frameon=False,
+           bbox_to_anchor=(0.5, 0.01), frameon=False,
            prop={'family': FONT, 'size': FS_LEGEND})
 
 # ── Save ─────────────────────────────────────────────────────────────────────
