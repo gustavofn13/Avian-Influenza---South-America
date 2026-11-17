@@ -109,7 +109,7 @@ Each script prints a totals table to the terminal for verification (it should ma
 
 **To add new countries** — modify `TARGET_COUNTRIES` at the top of each script.
 
----
+--- 
 
 ## First-time setup on WSL (Ubuntu)
 
